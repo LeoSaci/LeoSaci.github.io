@@ -63,3 +63,14 @@ h2 {
 .project-title {
   font-weight: 600;
 }
+
+
+.name {
+  font-size: 1.6em;
+  margin-bottom: 4px;
+}
+
+.title {
+  font-size: 0.95em;
+  color: #555;
+}
