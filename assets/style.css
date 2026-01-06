@@ -1,0 +1,65 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #111;
+}
+
+.container {
+  display: flex;
+  max-width: 1100px;
+  margin: 40px auto;
+  gap: 50px;
+  padding: 0 20px;
+}
+
+.sidebar {
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.sidebar img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.name {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.title {
+  color: #555;
+  margin-bottom: 16px;
+}
+
+.links a {
+  display: block;
+  color: #0066cc;
+  text-decoration: none;
+  margin-bottom: 6px;
+  font-size: 0.95em;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.main {
+  flex: 1;
+}
+
+h2 {
+  margin-top: 0;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 6px;
+}
+
+.project {
+  margin-bottom: 24px;
+}
+
+.project-title {
+  font-weight: 600;
+}
