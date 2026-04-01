@@ -1,59 +1,360 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Léo Saci</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121933;
+      --text: #e9eefc;
+      --muted: #b7c0e0;
+      --accent: #7aa2ff;
+      --accent-2: #9b8cff;
+      --border: rgba(255,255,255,0.08);
+      --shadow: 0 20px 50px rgba(0,0,0,0.35);
+      --maxw: 980px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(122,162,255,0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(155,140,255,0.16), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 28px 0 12px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--text);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 56px 0 28px;
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .card {
+      background: rgba(18, 25, 51, 0.82);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero-main {
+      padding: 34px;
+    }
+
+    .hero-side {
+      padding: 26px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 6px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .subtitle {
+      font-size: 1.08rem;
+      color: var(--muted);
+      max-width: 60ch;
+      margin-bottom: 24px;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      font-weight: 600;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      text-decoration: none;
+      opacity: 0.96;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      border: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text);
+    }
+
+    .mini-title {
+      margin: 0 0 10px;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+    }
+
+    .side-list {
+      display: grid;
+      gap: 14px;
+      font-size: 0.98rem;
+    }
+
+    .side-item strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+
+    section {
+      padding: 18px 0;
+    }
+
+    .section-card {
+      padding: 28px;
+    }
+
+    h2 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+
+    .chip {
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--text);
+      background: rgba(255,255,255,0.03);
+      font-size: 0.93rem;
+    }
+
+    .project {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,0.02);
+    }
+
+    .project h3 {
+      margin: 0 0 8px;
+      font-size: 1.08rem;
+    }
+
+    .project p {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      padding: 30px 0 50px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .muted { color: var(--muted); }
+
+    @media (max-width: 860px) {
+      .hero,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-
-<div class="container">
-
-  <div class="sidebar">
-    <h1 class="name">Léo Saci</h1>
-    <div class="title">Research-oriented Machine Learning Engineer</div>
-
-
-    <div class="links">
-      <a href="mailto:leo.saci@email.com">Email</a>
-      <a href="https://github.com/LeoSaci">GitHub</a>
-      <a href="https://www.linkedin.com/">LinkedIn</a>
+  <header>
+    <div class="wrap">
+      <nav>
+        <a class="brand" href="#top">Léo Saci</a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#research">Research</a>
+          <a href="#projects">Projects</a>
+          <a href="#links">Links</a>
+        </div>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <div class="main">
-    <h2>About</h2>
-    <p>
-      I am a research-oriented machine learning engineer with a strong background in applied mathematics (MVA, ISF).
-      My interests focus on clustering, regime discovery, and representation learning for high-dimensional and
-      time-series data.
-    </p>
+  <main id="top" class="wrap">
+    <section class="hero">
+      <div class="card hero-main">
+        <div class="eyebrow">PhD Student in Machine Learning</div>
+        <h1>Léo Saci</h1>
+        <p class="subtitle">
+          CIFRE PhD student in Machine Learning at Murex AI Research and Université Paris Dauphine – PSL, working on unsupervised learning, probabilistic modeling, and complex temporal data.
+        </p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#research">View research</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/leo-saci" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/leo-saci" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </div>
 
-    <p>
-      My current focus is on hierarchical and ensemble methods for regime discovery,
-      with an emphasis on interpretability and robustness.
-    </p>
+      <aside class="card hero-side">
+        <p class="mini-title">Current position</p>
+        <div class="side-list">
+          <div class="side-item">
+            <strong>PhD Student in Machine Learning</strong>
+            <span class="muted">Murex AI Research / Université Paris Dauphine – PSL</span>
+          </div>
+          <div class="side-item">
+            <strong>Background</strong>
+            <span class="muted">Normalien in Mathematics · MVA · ISF</span>
+          </div>
+          <div class="side-item">
+            <strong>Interests</strong>
+            <span class="muted">Unsupervised learning, generative models, time series, weak supervision</span>
+          </div>
+        </div>
+      </aside>
+    </section>
 
+    <section id="about">
+      <div class="card section-card">
+        <h2>About</h2>
+        <p>
+          I am a PhD student in Machine Learning at Murex AI Research, in collaboration with Université Paris Dauphine – PSL.
+          My work focuses on unsupervised learning and probabilistic modeling for complex and heterogeneous data.
+        </p>
+        <p>
+          In particular, I study how to model and align irregular multivariate time series, and how to recover latent structures from partially observed systems.
+          More broadly, I am interested in representation learning, generative models, and learning with limited supervision.
+        </p>
+      </div>
+    </section>
 
-    <h2>Research Projects</h2>
+    <section id="research">
+      <div class="card section-card">
+        <h2>Research</h2>
+        <p>
+          My PhD focuses on unsupervised learning for complex temporal systems, with an emphasis on heterogeneous and irregular multivariate time series.
+          I develop probabilistic and generative approaches to recover latent dynamics from partially observed systems and to leverage weak supervision signals for clustering and alignment.
+        </p>
+        <div class="chips">
+          <span class="chip">Machine Learning</span>
+          <span class="chip">Probabilistic Modeling</span>
+          <span class="chip">Unsupervised Learning</span>
+          <span class="chip">Time Series</span>
+          <span class="chip">Weak Supervision</span>
+          <span class="chip">Generative Models</span>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-      <div class="project-title">CoHiRF</div>
-      <p>
-        Hierarchical ensemble clustering method for uncovering structure and regimes in complex data.
-      </p>
+    <section id="projects">
+      <div class="grid-2">
+        <div class="card section-card">
+          <h2>Selected project</h2>
+          <div class="project">
+            <h3>GMVAE and weak supervision</h3>
+            <p>
+              Exploration of how an unsupervised generative model can be turned into a classifier with very few labeled examples.
+            </p>
+            <a href="https://github.com/leo-saci" target="_blank" rel="noreferrer">See code</a>
+          </div>
+        </div>
+
+        <div class="card section-card" id="links">
+          <h2>Links</h2>
+          <div class="project">
+            <h3>Profiles</h3>
+            <p>
+              You can find more details about my background and projects here.
+            </p>
+            <p><a href="https://www.linkedin.com/in/leo-saci" target="_blank" rel="noreferrer">LinkedIn</a></p>
+            <p><a href="https://github.com/leo-saci" target="_blank" rel="noreferrer">GitHub</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 Léo Saci · Built with GitHub Pages
     </div>
-
-    <div class="project">
-      <div class="project-title">ClusterRegressor</div>
-      <p>
-        Clustering-based regression framework combining unsupervised learning and local models.
-      </p>
-    </div>
-  </div>
-
-</div>
-
+  </footer>
 </body>
 </html>
