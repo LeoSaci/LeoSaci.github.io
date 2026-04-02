@@ -1,39 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Publications - Léo Saci</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --bg: #f6f6f7;
+      --panel: #ffffff;
+      --text: #2f3b4a;
+      --muted: #5f6773;
+      --line: #e6e8ec;
+      --accent: #2b6cb0;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .wrap {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .topbar {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-right: 24px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      font-size: 0.98rem;
+    }
+
+    main {
+      padding: 34px 0 48px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+      gap: 36px;
+      align-items: start;
+    }
+
+    .sidebar {
+      position: sticky;
+      top: 24px;
+      align-self: start;
+    }
+
+    .profile {
+      text-align: center;
+    }
+
+    .avatar {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, #2b6cb0, #4c51bf);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+      border: 1px solid #d9dce2;
+    }
+
+    .profile h2 {
+      margin: 0 0 6px;
+      font-size: 1.1rem;
+    }
+
+    .role {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 18px;
+    }
+
+    .side-list {
+      display: grid;
+      gap: 10px;
+      text-align: left;
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-top: 18px;
+    }
+
+    .side-links {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      text-align: left;
+      font-size: 0.96rem;
+    }
+
+    .content h1 {
+      margin: 0 0 12px;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .section-title {
+      margin: 0 0 18px;
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+    }
+
+    .year {
+      margin: 28px 0 12px;
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .pub-list {
+      display: grid;
+      gap: 28px;
+    }
+
+    .pub {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .pub::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1.4;
+    }
+
+    .pub-text {
+      font-size: 1.02rem;
+    }
+
+    .pub-text strong {
+      font-weight: 700;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid #d5d9df;
+      border-radius: 999px;
+      padding: 6px 14px;
+      background: #fafafb;
+      color: #4a5565;
+      font-size: 0.95rem;
+    }
+
+    .pill:hover {
+      text-decoration: none;
+      background: #f2f4f7;
+    }
+
+    .note {
+      margin-top: 34px;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .avatar {
+        width: 130px;
+        height: 130px;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="wrap topbar">
+      <a class="brand" href="index.html">Léo Saci</a>
+      <nav>
+        <a href="publications.html">Publications</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
 
-<header>
-  <a href="index.html">Léo Saci</a>
-  <nav>
-    <a href="publications.html">Publications</a>
-    <a href="cv.html">CV</a>
-  </nav>
-</header>
+  <main>
+    <div class="wrap layout">
+      <aside class="sidebar">
+        <div class="profile">
+          <div class="avatar">LS</div>
+          <h2>Léo Saci</h2>
+          <div class="role">PhD Student in Machine Learning</div>
 
-<main>
-  <h1>Publications</h1>
+          <div class="side-list">
+            <div>📍 Paris, France</div>
+            <div>🏛️ Murex AI Research / Université Paris Dauphine – PSL</div>
+            <div>🎓 Normalien in Mathematics · MVA · ISF</div>
+          </div>
 
-  <h2>2026</h2>
-  <ul>
-    <li>
-      <strong>Léo Saci</strong>. 
-      Turning an Unsupervised Model Into a Classifier With Very Few Labeled Data.
-      <br>
-      <a href="#">Paper</a> · <a href="#">Code</a>
-    </li>
-  </ul>
+          <div class="side-links">
+            <a href="index.html">Home</a>
+            <a href="https://github.com/LeoSaci" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/leo-saci" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+        </div>
+      </aside>
 
-  <h2>Work in progress</h2>
-  <ul>
-    <li>GMVAE and weak supervision</li>
-  </ul>
+      <section class="content">
+        <h1>Publications</h1>
+        <p class="intro">
+          This page gathers selected research articles, preprints, and work in progress.
+        </p>
 
-</main>
+        <h2 class="section-title">Selected Publications</h2>
 
+        <div class="year">2026</div>
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-text">
+              <strong>Léo Saci</strong>. “Turning an Unsupervised Model Into a Classifier With Very Few Labeled Data.” Working paper / article draft (2026).
+            </div>
+            <div class="pub-links">
+              <a class="pill" href="#" target="_blank" rel="noreferrer">Paper</a>
+              <a class="pill" href="https://github.com/LeoSaci" target="_blank" rel="noreferrer">Code</a>
+              <a class="pill" href="#">Abstract</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="year">Work in progress</div>
+        <div class="pub-list">
+          <article class="pub">
+            <div class="pub-text">
+              <strong>GMVAE and weak supervision.</strong> Label-efficient classification using unsupervised generative models and probabilistic cluster-label alignment.
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-text">
+              <strong>PhD research.</strong> Unsupervised learning and probabilistic modeling for heterogeneous and irregular multivariate time series.
+            </div>
+          </article>
+        </div>
+
+        <p class="note">
+          This page will be updated as preprints, publications, and software become publicly available.
+        </p>
+      </section>
+    </div>
+  </main>
 </body>
 </html>
