@@ -7,58 +7,33 @@ redirect_from:
   - /resume
 ---
 
-{% include base_path %}
+## Education
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+- **PhD in Machine Learning (CIFRE)**, Murex AI Research / Université Paris Dauphine – PSL, **2025–present**
+- **Master 2 Ingénierie Statistique et Financière (ISF)**, Université Paris Dauphine – PSL, **2025**
+- **Master 2 Mathématiques, Vision, Apprentissage (MVA)**, ENS Paris-Saclay, **2019**
+- **Normalien in Mathematics**, ENS Paris-Saclay
+- **Classes préparatoires MPSI–MP\***, Lycée Saint-Louis, Paris
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+## Research Interests
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+- Unsupervised learning
+- Probabilistic modeling
+- Generative models
+- Irregular multivariate time series
+- Weak supervision
+- Representation learning
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+## Publications
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+<ul>
+{% for post in site.publications reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+</ul>
+
+## Online Profiles
+
+- [Google Scholar](https://scholar.google.com/citations?user=c3aPppUAAAAJ&hl=fr&oi=ao)
+- [LinkedIn](https://www.linkedin.com/in/leo-saci)
+- [GitHub](https://github.com/LeoSaci)
