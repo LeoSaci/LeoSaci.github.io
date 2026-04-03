@@ -5,7 +5,7 @@ permalink: /cv/
 author_profile: true
 ---
 
-You can download my complete CV [here](#).
+You can download my complete CV [here](/files/cv.pdf).
 
 ## Education
 
