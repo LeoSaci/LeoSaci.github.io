@@ -1,10 +1,9 @@
 ---
-title: "Value learning from trajectory optimization and sobolev descent"
+title: "Routine bandits: Minimizing regret on recurring problems"
 collection: publications
-permalink: /publication/value-learning-trajectory
-excerpt: "Learning value functions from trajectory optimization."
-date: 2022-01-01
-venue: "ICRA 2022"
-paperurl: ""
-citation: "Parag A., Sclef K., Saci L., Mansard N., Stasse O. (2022)"
+permalink: /publication/routine-bandits
+date: 2021-01-01
+venue: "ECML PKDD 2021"
+paperurl: "https://link.springer.com/chapter/10.1007/978-3-030-86486-6_1"
+citation: "H. Saber, L. Saci, O.A. Maillard, A. Durand. Routine bandits: Minimizing regret on recurring problems. ECML PKDD 2021."
 ---

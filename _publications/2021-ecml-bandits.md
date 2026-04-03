@@ -1,10 +1,9 @@
 ---
-title: "Routine bandits: Minimizing regret on recurring problems"
+title: "Value learning from trajectory optimization and sobolev descent: A step toward reinforcement learning with superlinear convergence properties"
 collection: publications
-permalink: /publication/routine-bandits
-excerpt: "Bandit algorithms for recurring decision problems."
-date: 2021-01-01
-venue: "ECML PKDD"
-paperurl: ""
-citation: "H. Saber, L. Saci, O. Maillard, A. Durand (2021)"
+permalink: /publication/value-learning-trajectory
+date: 2022-01-01
+venue: "ICRA 2022"
+paperurl: "https://ieeexplore.ieee.org/abstract/document/9811993"
+citation: "A. Parag, S. Kleff, L. Saci, N. Mansard, O. Stasse. Value learning from trajectory optimization and sobolev descent: A step toward reinforcement learning with superlinear convergence properties. ICRA 2022."
 ---
