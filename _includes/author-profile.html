@@ -28,7 +28,14 @@
         <li class="author__desktop"><i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"></i>{{ author.location }}</li>
       {% endif %}
       {% if author.employer %}
-        <li class="author__desktop"><i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"></i>{{ author.employer }}</li>
+        <li>
+          <i class="fas fa-fw fa-building" aria-hidden="true"></i>
+          <span>
+            <a href="https://www.murex.com" target="_blank" rel="noopener noreferrer">Murex AI Research</a>
+            /
+            <a href="https://dauphine.psl.eu" target="_blank" rel="noopener noreferrer">Université Paris Dauphine – PSL</a>
+          </span>
+        </li>
       {% endif %}
       {% if author.uri %}
         <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"></i>{{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
