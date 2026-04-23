@@ -1,9 +1,29 @@
 {% include base_path %}
 
+{% assign en_url = base_path | append: "/" %}
+{% assign fr_url = base_path | append: "/fr/" %}
+
+{% if page.url == "/publications/" %}
+  {% assign en_url = base_path | append: "/publications/" %}
+  {% assign fr_url = base_path | append: "/fr/publications/" %}
+{% elsif page.url == "/cv/" %}
+  {% assign en_url = base_path | append: "/cv/" %}
+  {% assign fr_url = base_path | append: "/fr/cv/" %}
+{% elsif page.url == "/fr/" %}
+  {% assign en_url = base_path | append: "/" %}
+  {% assign fr_url = base_path | append: "/fr/" %}
+{% elsif page.url == "/fr/publications/" %}
+  {% assign en_url = base_path | append: "/publications/" %}
+  {% assign fr_url = base_path | append: "/fr/publications/" %}
+{% elsif page.url == "/fr/cv/" %}
+  {% assign en_url = base_path | append: "/cv/" %}
+  {% assign fr_url = base_path | append: "/fr/cv/" %}
+{% endif %}
+
 <div class="lang-switch-top">
-  <a href="{{ base_path }}/">EN</a>
+  <a href="{{ en_url }}" {% if page.url == "/" or page.url == "/publications/" or page.url == "/cv/" %}class="lang-active"{% endif %}>EN</a>
   <span class="lang-sep">|</span>
-  <a href="{{ base_path }}/fr/">FR</a>
+  <a href="{{ fr_url }}" {% if page.url == "/fr/" or page.url == "/fr/publications/" or page.url == "/fr/cv/" %}class="lang-active"{% endif %}>FR</a>
 </div>
 
 <div class="masthead">
@@ -13,20 +33,26 @@
         <button><span class="navicon"></span></button>
 
         <ul class="visible-links">
-          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' %}selected{% endif %}">
-            <a href="{{ base_path }}/">{{ site.title }}</a>
+          {% assign is_french = false %}
+          {% if page.url == "/fr/" or page.url == "/fr/publications/" or page.url == "/fr/cv/" %}
+            {% assign is_french = true %}
+          {% endif %}
+
+          <li class="masthead__menu-item masthead__menu-item--lg persist {% if page.url == '/' or page.url == '/index.html' or page.url == '/fr/' %}selected{% endif %}">
+            <a href="{% if is_french %}{{ base_path }}/fr/{% else %}{{ base_path }}/{% endif %}">{{ site.title }}</a>
           </li>
 
-          {% for link in site.data.navigation.main %}
-            {% if link.url contains 'http' %}
-              {% assign domain = '' %}
-            {% else %}
-              {% assign domain = base_path %}
-            {% endif %}
-            <li class="masthead__menu-item {% if page.url contains link.url and link.url != '/' %}selected{% endif %}">
-              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
-            </li>
-          {% endfor %}
+          <li class="masthead__menu-item {% if page.url == '/publications/' or page.url == '/fr/publications/' %}selected{% endif %}">
+            <a href="{% if is_french %}{{ base_path }}/fr/publications/{% else %}{{ base_path }}/publications/{% endif %}">
+              Publications
+            </a>
+          </li>
+
+          <li class="masthead__menu-item {% if page.url == '/cv/' or page.url == '/fr/cv/' %}selected{% endif %}">
+            <a href="{% if is_french %}{{ base_path }}/fr/cv/{% else %}{{ base_path }}/cv/{% endif %}">
+              CV
+            </a>
+          </li>
 
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon">

@@ -1,0 +1,82 @@
+---
+layout: single
+title: "Publications"
+permalink: /fr/publications/
+author_profile: true
+---
+
+Vous pouvez également consulter mes publications académiques sur
+<a href="{{ site.author.googlescholar }}">Google Scholar</a>.
+
+<h2>Publications sélectionnées</h2>
+
+{% assign pubs = site.publications | sort: "date" | reverse %}
+{% assign current_year = "" %}
+
+{% for post in pubs %}
+  {% assign post_year = post.date | date: "%Y" %}
+
+  {% if post_year != current_year %}
+    {% assign current_year = post_year %}
+    <h3 style="margin-top: 2em;">{{ current_year }}</h3>
+  {% endif %}
+
+  <div style="margin-bottom: 1.8em;">
+    <p style="margin-bottom: 0.35em;">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}"><strong>{{ post.title }}</strong></a>
+      {% else %}
+        <strong>{{ post.title }}</strong>
+      {% endif %}
+    </p>
+
+    {% if post.citation %}
+      <p style="margin: 0 0 0.35em 0;">
+        {{ post.citation }}
+      </p>
+    {% elsif post.venue %}
+      <p style="margin: 0 0 0.35em 0;">
+        <em>{{ post.venue }}</em>
+      </p>
+    {% endif %}
+
+    <p style="margin: 0;">
+      {% if post.paperurl %}
+        <a href="{{ post.paperurl }}">Article</a>
+      {% endif %}
+      {% if post.slidesurl %}
+        {% if post.paperurl %} · {% endif %}
+        <a href="{{ post.slidesurl }}">Slides</a>
+      {% endif %}
+      {% if post.bibtexurl %}
+        {% if post.paperurl or post.slidesurl %} · {% endif %}
+        <a href="{{ post.bibtexurl }}">BibTeX</a>
+      {% endif %}
+    </p>
+  </div>
+{% endfor %}
+
+<h2 style="margin-top: 2.5em;">Articles et vulgarisation</h2>
+
+<p>
+  J’écris également des articles techniques sur
+  <a href="https://towardsdatascience.com/author/leo-saci/" target="_blank" rel="noopener noreferrer">Towards Data Science</a>.
+</p>
+
+<div style="margin-bottom: 1.8em;">
+  <p style="margin-bottom: 0.35em;">
+    <a href="https://towardsdatascience.com/you-dont-need-many-labels-to-learn/" target="_blank" rel="noopener noreferrer">
+      <strong>You Don’t Need Many Labels to Learn</strong>
+    </a>
+  </p>
+
+  <p style="margin: 0 0 0.35em 0;">
+    <em>Towards Data Science</em>
+  </p>
+
+  <p style="margin: 0;">
+    <a href="https://towardsdatascience.com/you-dont-need-many-labels-to-learn/" target="_blank" rel="noopener noreferrer">Article</a>
+    ·
+    <a href="https://towardsdatascience.com/author/leo-saci/" target="_blank" rel="noopener noreferrer">Page auteur</a>
+  </p>
+</div>

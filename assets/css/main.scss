@@ -124,6 +124,11 @@
   text-decoration: underline;
 }
 
+.lang-switch-top a.lang-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
 .lang-sep {
   margin: 0 0.28rem;
   opacity: 0.6;
