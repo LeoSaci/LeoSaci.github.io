@@ -18,3 +18,5 @@ I am a normalien in mathematics from ENS Paris-Saclay, and I hold master’s deg
 More broadly, I am interested in representation learning, generative models, time series clustering, and learning with limited supervision.
 
 You can also find me on [Google Scholar](https://scholar.google.com/citations?user=c3aPppUAAAAJ&hl=fr&oi=ao) and [LinkedIn](https://www.linkedin.com/in/leo-saci).
+
+Outside of research, I am interested in numismatics, archaeology, history, and music.
