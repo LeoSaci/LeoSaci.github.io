@@ -5,7 +5,7 @@ permalink: /cv/
 author_profile: true
 ---
 
-You can download my complete CV [here](/files/cv.pdf).
+Here is my complete CV [here](/files/cv.pdf).
 
 ## Education
 
@@ -18,10 +18,3 @@ You can download my complete CV [here](/files/cv.pdf).
 - **Normalien in Mathematics**, ENS Paris-Saclay
 
 - **Classes préparatoires MPSI–MP\***, Lycée Saint-Louis, Paris
-
-## Research Interests
-
-- Unsupervised learning  
-- Probabilistic modeling  
-- Generative models  
-- Weak supervision
