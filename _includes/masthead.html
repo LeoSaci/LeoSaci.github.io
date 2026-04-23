@@ -1,4 +1,11 @@
 {% include base_path %}
+
+<div class="lang-switch-top">
+  <a href="{{ base_path }}/">EN</a>
+  <span class="lang-sep">|</span>
+  <a href="{{ base_path }}/fr/">FR</a>
+</div>
+
 <div class="masthead">
   <div class="masthead__inner-wrap">
     <div class="masthead__menu">
@@ -20,12 +27,6 @@
               <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
             </li>
           {% endfor %}
-
-          <li class="masthead__menu-item persist lang-switch">
-            <a href="{{ base_path }}/">EN</a>
-            <span class="lang-sep">|</span>
-            <a href="{{ base_path }}/fr/">FR</a>
-          </li>
 
           <li id="theme-toggle" class="masthead__menu-item persist tail">
             <a role="button" aria-labelledby="theme-icon">
