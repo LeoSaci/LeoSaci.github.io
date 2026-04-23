@@ -13,7 +13,7 @@ My research focuses on unsupervised learning and representation learning for com
 
 My academic supervisors are [Madalina Olteanu](https://sites.google.com/view/madalina-olteanu/) and [Katia Meziani](https://sites.google.com/site/katiameziani00/).
 
-I am a normalien in mathematics from ENS Paris-Saclay, and I hold master’s degrees in Machine Learning (MVA) and Statistical and Financial Engineering (ISF).
+I am a normalien in mathematics from ENS Paris-Saclay, and I hold master’s degrees in Machine Learning ([MVA](https://www.master-mva.com/)) and Statistical and Financial Engineering ([ISF](https://dauphine.psl.eu/formations/masters/mathematiques-et-applications/m2-ingenierie-statistique-et-financiere)).
 
 More broadly, I am interested in representation learning, generative models, time series clustering, and learning with limited supervision.
 
