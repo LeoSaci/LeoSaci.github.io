@@ -15,6 +15,6 @@ Here is my complete CV [here](/files/cv.pdf).
 
 - **M.Sc. in Mathematics, Vision, Learning (MVA)**, ENS Paris-Saclay, *2019*
 
-- **Normalien in Mathematics**, ENS Paris-Saclay
+- **Normalien in Mathematics**, ENS Paris-Saclay, *2016-2020*
 
 - **Classes préparatoires MPSI–MP\***, Lycée Saint-Louis, Paris
