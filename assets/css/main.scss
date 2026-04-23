@@ -108,3 +108,21 @@
   margin: 0;
 }
 
+.lang-switch {
+  margin-left: 1rem;
+  opacity: 0.8;
+  font-size: 0.95em;
+}
+
+.lang-switch a {
+  text-decoration: none;
+}
+
+.lang-switch a:hover {
+  text-decoration: underline;
+}
+
+.lang-sep {
+  margin: 0 0.35rem;
+  opacity: 0.6;
+}
