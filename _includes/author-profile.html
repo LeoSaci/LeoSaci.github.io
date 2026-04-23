@@ -6,6 +6,11 @@
   {% assign author = site.author %}
 {% endif %}
 
+{% assign is_french = false %}
+{% if page.url contains '/fr/' %}
+  {% assign is_french = true %}
+{% endif %}
+
 <div itemscope itemtype="http://schema.org/Person">
 
   <div class="author__avatar">
@@ -18,8 +23,18 @@
 
   <div class="author__content">
     <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.pronouns %}<p class="author__pronouns">{{ author.pronouns }}</p>{% endif %}
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
+    {% if author.pronouns %}
+      <p class="author__pronouns">{{ author.pronouns }}</p>
+    {% endif %}
+    {% if author.bio %}
+      <p class="author__bio">
+        {% if is_french and author.bio_fr %}
+          {{ author.bio_fr }}
+        {% else %}
+          {{ author.bio }}
+        {% endif %}
+      </p>
+    {% endif %}
   </div>
 
   <div class="author__urls-wrapper">
@@ -43,14 +58,22 @@
       {% if author.academia %}
         <li class="author__item">
           <i class="fas fa-fw fa-university icon-pad-right" aria-hidden="true"></i>
-          <a href="{{ author.academia }}" target="_blank" rel="noopener noreferrer">Université Paris Dauphine – PSL</a>
+          <a href="{{ author.academia }}" target="_blank" rel="noopener noreferrer">
+            {% if is_french %}
+              CEREMADE (Université Paris Dauphine – PSL)
+            {% else %}
+              CEREMADE (Université Paris Dauphine – PSL)
+            {% endif %}
+          </a>
         </li>
       {% endif %}
 
       {% if author.email %}
         <li class="author__item">
           <i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"></i>
-          <a href="mailto:{{ author.email }}">{{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a>
+          <a href="mailto:{{ author.email }}">
+            {% if is_french %}E-mail{% else %}Email{% endif %}
+          </a>
         </li>
       {% endif %}
 
@@ -173,178 +196,10 @@
         </li>
       {% endif %}
 
-      {% if author.artstation %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-artstation icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.artstation.com/{{ author.artstation }}">Artstation</a>
-        </li>
-      {% endif %}
-
-      {% if author.bluesky %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-bluesky icon-pad-right" aria-hidden="true"></i>
-          <a href="https://bsky.app/profile/{{ author.bluesky }}">Bluesky</a>
-        </li>
-      {% endif %}
-
-      {% if author.facebook %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-facebook-f icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.facebook.com/{{ author.facebook }}">Facebook</a>
-        </li>
-      {% endif %}
-
-      {% if author.flickr %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-flickr icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.flickr.com/{{ author.flickr }}">Flickr</a>
-        </li>
-      {% endif %}
-
-      {% if author.foursquare %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-foursquare icon-pad-right" aria-hidden="true"></i>
-          <a href="https://foursquare.com/{{ author.foursquare }}">Foursquare</a>
-        </li>
-      {% endif %}
-
-      {% if author.goodreads %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-goodreads icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.goodreads.com/{{ author.goodreads }}">Goodreads</a>
-        </li>
-      {% endif %}
-
-      {% if author.google_plus %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-google-plus-g icon-pad-right" aria-hidden="true"></i>
-          <a href="https://plus.google.com/+{{ author.google_plus }}">Google+</a>
-        </li>
-      {% endif %}
-
-      {% if author.keybase %}
-        <li class="author__item">
-          <i class="fas fa-fw fa-key icon-pad-right" aria-hidden="true"></i>
-          <a href="https://keybase.io/{{ author.keybase }}">Keybase</a>
-        </li>
-      {% endif %}
-
-      {% if author.instagram %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"></i>
-          <a href="https://instagram.com/{{ author.instagram }}">Instagram</a>
-        </li>
-      {% endif %}
-
-      {% if author.lastfm %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"></i>
-          <a href="https://last.fm/user/{{ author.lastfm }}">Last.fm</a>
-        </li>
-      {% endif %}
-
       {% if author.linkedin %}
         <li class="author__item">
           <i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"></i>
           <a href="https://www.linkedin.com/in/{{ author.linkedin }}">LinkedIn</a>
-        </li>
-      {% endif %}
-
-      {% if author.mastodon %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"></i>
-          <a href="{{ author.mastodon }}">Mastodon</a>
-        </li>
-      {% endif %}
-
-      {% if author.medium %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-medium icon-pad-right" aria-hidden="true"></i>
-          <a href="{{ author.medium }}">Medium</a>
-        </li>
-      {% endif %}
-
-      {% if author.pinterest %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-pinterest icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.pinterest.com/{{ author.pinterest }}">Pinterest</a>
-        </li>
-      {% endif %}
-
-      {% if author.soundcloud %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-soundcloud icon-pad-right" aria-hidden="true"></i>
-          <a href="https://soundcloud.com/{{ author.soundcloud }}">Soundcloud</a>
-        </li>
-      {% endif %}
-
-      {% if author.steam %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-steam icon-pad-right" aria-hidden="true"></i>
-          <a href="https://steamcommunity.com/id/{{ author.steam }}">Steam</a>
-        </li>
-      {% endif %}
-
-      {% if author.telegram %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-telegram icon-pad-right" aria-hidden="true"></i>
-          <a href="{{ author.telegram }}">Telegram</a>
-        </li>
-      {% endif %}
-
-      {% if author.tumblr %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-tumblr icon-pad-right" aria-hidden="true"></i>
-          <a href="https://{{ author.tumblr }}.tumblr.com">Tumblr</a>
-        </li>
-      {% endif %}
-
-      {% if author.twitter %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-x-twitter icon-pad-right" aria-hidden="true"></i>
-          <a href="https://twitter.com/{{ author.twitter }}">X (formerly Twitter)</a>
-        </li>
-      {% endif %}
-
-      {% if author.vine %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-vine icon-pad-right" aria-hidden="true"></i>
-          <a href="https://vine.co/u/{{ author.vine }}">Vine</a>
-        </li>
-      {% endif %}
-
-      {% if author.weibo %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-weibo icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.weibo.com/{{ author.weibo }}">Weibo</a>
-        </li>
-      {% endif %}
-
-      {% if author.wikipedia %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-wikipedia-w icon-pad-right" aria-hidden="true"></i>
-          <a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}">Wikipedia</a>
-        </li>
-      {% endif %}
-
-      {% if author.xing %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-xing icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.xing.com/profile/{{ author.xing }}">XING</a>
-        </li>
-      {% endif %}
-
-      {% if author.youtube %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-youtube icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.youtube.com/@{{ author.youtube }}">YouTube</a>
-        </li>
-      {% endif %}
-
-      {% if author.zhihu %}
-        <li class="author__item">
-          <i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"></i>
-          <a href="https://www.zhihu.com/people/{{ author.zhihu }}">Zhihu</a>
         </li>
       {% endif %}
     </ul>
