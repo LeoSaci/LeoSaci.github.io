@@ -60,3 +60,7 @@
   display: inline-block;
   vertical-align: middle;
 }
+
+.author__urls li.author__item a {
+  word-break: break-word;
+}
