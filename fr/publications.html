@@ -6,6 +6,7 @@ author_profile: true
 ---
 
 {% assign pubs = site.publications | sort: "date" | reverse %}
+{% assign current_year = "" %}
 
 <p>
   Vous pouvez également consulter mes publications académiques sur
@@ -13,8 +14,6 @@ author_profile: true
 </p>
 
 <h2>Publications sélectionnées</h2>
-
-{% assign current_year = "" %}
 
 {% for post in pubs %}
   {% assign post_year = post.date | date: "%Y" %}
