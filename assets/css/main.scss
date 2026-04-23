@@ -44,33 +44,34 @@
 
 /* ===== Sidebar author links alignment ===== */
 
-.author__urls li {
-  margin-bottom: 0.45rem;
-}
+/* ===== Sidebar author links alignment ===== */
 
-.author__row {
-  display: inline-flex;
+.author__urls li.author__item {
+  display: flex;
   align-items: center;
   gap: 0.55rem;
   line-height: 1.35;
+  margin-bottom: 0.45rem;
 }
 
-.author__row i {
+.author__urls li.author__item i {
+  flex: 0 0 1.15rem;
   width: 1.15rem;
   min-width: 1.15rem;
   text-align: center;
 }
 
-.author__text {
+.author__urls li.author__item a,
+.author__urls li.author__item span {
   display: inline-block;
   vertical-align: middle;
   word-break: break-word;
 }
 
-.author__urls a.author__text {
+.author__urls li.author__item a {
   text-decoration: none;
 }
 
-.author__urls a.author__text:hover {
+.author__urls li.author__item a:hover {
   text-decoration: underline;
 }
