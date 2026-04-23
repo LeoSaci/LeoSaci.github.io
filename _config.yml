@@ -22,11 +22,12 @@ author:
   pronouns         :
   bio              : "CIFRE PhD student in Machine Learning at Murex AI Research and Université Paris Dauphine – PSL."
   location         : "Paris, France"
-  employer         : "Murex AI Research / Université Paris Dauphine – PSL"  uri              :
+  employer         : "Murex AI Research"
+  academia         : "https://dauphine.psl.eu"
+  uri              : "https://www.murex.com"
   email            :
 
   # Academic websites
-  academia         :
   arxiv            :
   googlescholar    : "https://scholar.google.com/citations?user=c3aPppUAAAAJ&hl=fr&oi=ao"
   inspire-hep      :
@@ -146,6 +147,8 @@ social:
     - "https://scholar.google.com/citations?user=c3aPppUAAAAJ&hl=fr&oi=ao"
     - "https://github.com/LeoSaci"
     - "https://www.linkedin.com/in/leo-saci"
+    - "https://www.murex.com"
+    - "https://dauphine.psl.eu"
 
 # Analytics
 analytics:
@@ -332,4 +335,4 @@ compress_html:
   ignore:
     envs: development
 
-google_scholar: https://scholar.google.com/citations?user=c3aPppUAAAAJ
+google_scholar: "https://scholar.google.com/citations?user=c3aPppUAAAAJ"
