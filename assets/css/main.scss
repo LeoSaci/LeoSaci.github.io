@@ -133,3 +133,33 @@
   margin: 0 0.28rem;
   opacity: 0.6;
 }
+
+
+.lang-switch-top {
+  position: fixed;
+  top: 10px;
+  right: 22px;
+  z-index: 2000;
+  font-size: 0.78rem;
+  line-height: 1;
+  opacity: 0.72;
+  background: transparent;
+}
+
+.lang-switch-top a {
+  text-decoration: none;
+}
+
+.lang-switch-top a:hover {
+  text-decoration: underline;
+}
+
+.lang-switch-top a.lang-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.lang-sep {
+  margin: 0 0.28rem;
+  opacity: 0.6;
+}
