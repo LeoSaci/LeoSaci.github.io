@@ -163,3 +163,16 @@
   margin: 0 0.28rem;
   opacity: 0.6;
 }
+
+.org-logo {
+  height: 14px;
+  width: auto;
+  margin-right: 6px;
+  vertical-align: middle;
+  opacity: 0.9;
+}
+
+.author__urls li.author__item a {
+  display: inline-flex;
+  align-items: center;
+}

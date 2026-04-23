@@ -51,7 +51,12 @@
       {% if author.employer %}
         <li class="author__item">
           <i class="fas fa-fw fa-building icon-pad-right" aria-hidden="true"></i>
-          <a href="{{ author.uri }}" target="_blank" rel="noopener noreferrer">{{ author.employer }}</a>
+          <a href="{{ author.uri }}" target="_blank" rel="noopener noreferrer">
+            <img src="{{ base_path }}/assets/images/murex.png"
+                alt="Murex"
+                class="org-logo">
+            {{ author.employer }}
+          </a>
         </li>
       {% endif %}
 
